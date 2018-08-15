@@ -220,7 +220,7 @@ a:active {
 }
 
 /* Medium screens */
-@media all and (min-width: 600px) {
+@media all and (min-width: 720px) {
   /* We tell both sidebars to share a row */
   .sideline, .timeline { flex: 1 50%; }
 }
