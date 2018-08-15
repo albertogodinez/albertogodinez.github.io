@@ -117,7 +117,7 @@ a:active {
 
 .texas {
   max-width: 36px;
-  margin: -8px;
+  margin: 0px 0px -10px -10px;
 }
 
 .texas {
@@ -209,7 +209,7 @@ a:active {
 @media all and (min-width: 720px) {
   /* We tell both sidebars to share a row */
   .sideline, .timeline { flex: 1 50%; }
-  
+
   .link::after {
     content: '';
     display: block;
