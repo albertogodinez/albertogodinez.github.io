@@ -1,0 +1,227 @@
+@-webkit-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@-webkit-keyframes shake {
+  52%,
+  68% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0)
+  }
+  54%,
+  66% {
+      -webkit-transform: translate3d(1px, 0, 0);
+      transform: translate3d(1px, 0, 0)
+  }
+  56%,
+  60%,
+  64% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0)
+  }
+  58%,
+  62% {
+      -webkit-transform: translate3d(1px, 0, 0);
+      transform: translate3d(1px, 0, 0)
+  }
+}
+
+@keyframes shake {
+  52%,
+  68% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0)
+  }
+  54%,
+  66% {
+      -webkit-transform: translate3d(1px, 0, 0);
+      transform: translate3d(1px, 0, 0)
+  }
+  56%,
+  60%,
+  64% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0)
+  }
+  58%,
+  62% {
+      -webkit-transform: translate3d(1px, 0, 0);
+      transform: translate3d(1px, 0, 0)
+  }
+}
+
+
+:root {
+  --link-color: #beffe9;
+  --header-text-color: #beffe9;
+  --std-text-color: #d6d6d6;
+  --primary-color: #B0C6CE;
+  --background-color: #3b5a69;
+  --container-color: #1f3541;
+  --offwhite-color: rgb(250, 249, 246);
+}
+
+body {
+  background: var(--container-color);
+  color: var(--offwhite-color);
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: var(--container-color);
+  max-width: 1000px;
+  padding: 25px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+h1 {
+  color: var(--offwhite-color)
+}
+
+.container > * {
+  flex: 1 100%;
+}
+
+a:link {
+  text-decoration: none;
+  color: var(--link-color);
+}
+a {
+  color: var(--link-color)
+}
+
+a:active {
+  font-weight: 700;
+  color: inherit;
+}
+
+.texas {
+  max-width: 36px;
+  margin: -8px;
+}
+
+.texas {
+  -webkit-animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
+  animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.pulse {
+  -webkit-animation: pulse 2s infinite;
+}
+
+.lists {
+  display: none;
+}
+
+.accordian ul{
+  list-style-type: none
+}
+
+.accordian .lists {
+  display: block;
+}
+
+.lists:target  ~ .lists{
+  background: #242635;
+}
+
+.life-event strong{
+  font-size: 16px;
+  text-decoration: underline; 
+}
+
+.life-event .hidden-description {
+  visibility: hidden;
+  max-height: 0;
+  transition: visibility 0s, max-height 0.5s linear;
+}
+
+.life-event:hover .hidden-description{
+  visibility: visible;
+  max-height: 100px;
+  transition: max-height 0.5s linear;
+}
+
+.footer ul {
+  list-style: none;
+  text-align: center;
+}
+
+.footer-list{
+  padding: 0px;
+}
+.footer-list li{
+  display: inline-block;
+}
+
+.link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--link-color);
+  transition: width .3s;
+}
+
+.link:hover::after {
+  width: 100%;
+  transition: width .3s;
+}
+
+.sideline-item {
+  width: fit-content;
+}
+
+.arrow {
+  display: inline-block;
+}
+
+.rotate-arrow {
+  /* display: block; */
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .sideline, .timeline { flex: 1 50%; }
+}
+

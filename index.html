@@ -1,0 +1,136 @@
+<!doctype html>
+  
+<html>
+<head>
+    <title>Alberto Godinez</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Alberto Godinez</h1>
+    </div>
+    <div class="bio">
+      <p>Hello! I'm Alberto Godinez and I'm currently working as a <strong>full-stack software developer</strong> in Austin, 
+        <image class="texas" src="texas.svg" alt="Texas"/> 
+      </p>
+      <p>While I enjoy the entire process of development, I also love to play Super Smash Bros., collect sneakers, and travel.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="title pulse">
+        <h2 class="center-text">TIMELINE <span class="arrow">&#9660;</span></h2>
+      </div>
+        <ul class="lists">
+          <li class="life-event">
+            <p><strong>11/17 - Got married!</strong></p>
+            <p class="hidden-description">Officially tied the knot with my bestfriend</p>
+          </li>
+          <li class="life-event">
+            <p><strong>09/17 - Joined Teacher Retirement System of Texas</strong></p>
+            <p class="hidden-description">Working as a full-stack software developer using Angular/Java/MySQL</p>
+          </li>
+          <li class="life-event">
+            <p><strong>05/17 - Attendend SXSW Hackathon</strong></p>
+            <p class="hidden-description">Won awards for best use of SOCAN and MapQuest API's</p>
+          </li>
+          <li class="life-event">
+            <p><strong>02/17 - Assisted as a Test Lead for Twisted Pixel Games</strong></p>
+            <p class="hidden-description">Created test cases for a team of testers that worked remotely. Also, played a TON of VR games</p>
+          </li>
+          <li class="life-event">
+            <p><strong>08/16 - Proposed to my girlfriend</strong></p>
+            <p class="hidden-description">Planning <a href="https://vimeo.com/channels/studiophosart/185333613">this</a> proposal was super tough to plan but worth it!</p>
+          </li>
+          <li class="life-event">
+            <p><strong>01/16 - Joined Accenture</strong></p>
+            <p class="hidden-description">Worked as an Associate Software Engineer where I mainly used Java and JUnit to create test cases and also did some automated testing.</p>
+          </li>
+          <li class="life-event">
+            <p><strong>08/15 - Graduated from Texas State University</strong></p>
+            <p class="hidden-description">Received a B.A. in Computer Science with a minor in International Studies.</p>
+          </li>
+          <li class="life-event">
+            <p><strong>05/14 - Studied in Barcelona</strong></p>
+            <p class="hidden-description">Studied abroad in Barcelona. I blame Barcelona for giving me the travel bug!</p>
+          </li>
+          <li class="life-event">
+            <p><strong>06/13 - Released an iOS game</strong></p>
+            <p class="hidden-description">Although it's no longer up and running, feel free to check out this <a href="https://www.youtube.com/watch?v=LOab89O1Q78">short trailer</a>.</p>
+          </li>
+          <li class="life-event">
+            <p><strong>05/12 - Interned at Twisted Pixel Games</strong></p>
+            <p class="hidden-description">Tested a lot, helped with conventions, played a ton of games.</p>
+          </li>
+        </ul>
+    </div>
+
+    <div class="sideline">
+      <div class="title pulse">
+        <h2 class="center-text">SIDELINE <span class="arrow">&#9660;</span></h2>
+      </div>
+      <!-- <p>These are a few projects that I've worked on the side to improve on existing skills, learn new tech, or simply to cause myself more stress.</p> -->
+      <ul class="lists">
+        <li>
+          <div class="sideline-item"><a class="link" href="https://github.com/albertogodinez/dooms-data">Dooms Data</a></div>
+          <p> - Single page application that uses React, Express, Typescript, PostegreSQL and Objection.js</p>
+        </li>
+        <li>
+          <div class="sideline-item"><a class="link" href="https://github.com/albertogodinez/losgodinez">Los Godinez</a></div>
+          <p> - Static site for our wedding that uses Bootstrap, Grunt, CSS and Javscript</p>
+        </li>
+        <li>
+          <div class="sideline-item"><a class="link" href="https://github.com/albertogodinez/IVR_PhoneTree">IVR Phone Tree</a></div>
+          <p> - Express project where I created an IVR phone tree that also uses Heroku, Twilio, MongoDB, and Mongoose</p>
+        </li>   
+        <li>
+          <div class="sideline-item"><a class="link" href"https://github.com/albertogodinez/elo-rankings">Elo Ranker</a></div>
+          <p> - Java project that uses the Elo Ranking System to rank players using data from the <a href="https://challonge.com/">Challonge</a> api</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>If you have any other questions, comments, etc., feel free to email me or check out any of the links below.</p>
+      <ul class="footer-list">
+        <li><a href="mailto:alberto.godinez90@gmail.com?subject=Inquiry" class="link">email</a></li>
+        <li><a href="" class="link">resume</a></li>
+        <li><a href="https://github.com/albertogodinez" class="link">github</a></li>
+        <li><a href="https://www.linkedin.com/in/albertogodinez/" class="link">linkedin</a></li>
+        <li><a href="https://www.instagram.com/alberto_godinez/" class="link">instagram</a></li>
+      </ul>
+    </div>
+  </div>
+<script>
+  function expandGroups(event) {
+    var els = document.getElementsByClassName('title');
+    var arrowEls = document.getElementsByClassName('arrow');
+
+    if (event === 'touchend') {
+      event.preventDefault();
+    }
+    Array.prototype.forEach.call(els, function(el) {
+      el.addEventListener(event, function () {
+        let arrow = el.getElementsByClassName('arrow')[0]
+
+        if(arrow.classList.contains('rotate-arrow')) {
+          arrow.classList.remove('rotate-arrow');
+        } else {
+          arrow.classList.add('rotate-arrow');
+        }
+        el.parentElement.classList.toggle('accordian');
+        if(el.classList.contains('pulse')) {
+          el.classList.remove('pulse');
+        }
+      }, false);
+    });
+  }
+    window.addEventListener('load', function() {
+      expandGroups('click');
+    });
+</script>
+</body>
+</html>
